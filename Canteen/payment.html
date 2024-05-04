@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Bhojnalaya</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <h1><a href="index.html" style="color: white; text-decoration: none;">Bhojnalaya</a></h1>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>               
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign-Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
+        <section>
+            <h2>Payment Details</h2>
+            <div>
+                <p>Selected Item: <span id="selected-item"></span></p>
+                <p>Quantity: <input type="number" id="quantity" value="1" min="1"></p>
+                <p>Total Price: ₹
+                    <span id="total-price"></span>
+                    <br>
+                    <br>
+                    <p>UPI ID: <input type="text" id="quantity" placeholder="username@bank" required></p>
+                    
+                    <button id="pay-btn">Proceed to Payment</button>
+                </div>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+            <p>Contact us: +1234567890 | info@bhojnalaya.com</p>
+            <p>Owner: John Doe</p>
+            <div>
+                <a href="index.html">Home</a> |
+                <a href="menu.html">Menu</a> |
+                <a href="login.html">Login</a>
+            </div>
+            <p>&copy; 2024 Bhojnalaya. All rights reserved.</p>
+        </footer>
+    
+        <!-- JavaScript to handle payment functionality -->
+        <script>
+            // Get item details from query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedItem = urlParams.get('item');
+            const itemPrice = parseFloat(urlParams.get('price'));
+            const itemImage = urlParams.get('image'); // Correctly retrieve the image URL from parameters
+        
+            // Display item details
+            document.getElementById('selected-item').textContent = selectedItem;
+        
+            // Calculate and display total price based on quantity
+            function calculateTotalPrice() {
+                const quantity = document.getElementById('quantity').value;
+                const totalPrice = (itemPrice * quantity).toFixed(2);
+                document.getElementById('total-price').textContent = totalPrice;
+            }
+            calculateTotalPrice(); // Calculate on page load
+        
+            // Add event listener for quantity change
+            document.getElementById('quantity').addEventListener('input', calculateTotalPrice);
+        
+            // Add event listener for payment button click
+            document.getElementById('pay-btn').addEventListener('click', function() {
+                alert('Payment successful! Your order has been confirmed.');
+        
+                // Collect the latest data for redirection 
+                const itemQuantity = document.getElementById('quantity').value;
+                const totalPrice = document.getElementById('total-price').textContent;
+        
+                // Construct URL for the confirmation page with query parameters
+                const confirmationUrl = `confirmation.html?item=${encodeURIComponent(selectedItem)}&image=${encodeURIComponent(itemImage)}&quantity=${encodeURIComponent(itemQuantity)}&total=${encodeURIComponent(totalPrice)}`;
+        
+                // Redirect to confirmation page with details
+                window.location.href = confirmationUrl;
+            });
+        </script>
+        
+               
+    </body>
+    </html>
+    

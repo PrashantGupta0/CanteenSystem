@@ -1,0 +1,53 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 18%; /* Adjusts to fit 5 items per row */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: white;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-name {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: 1em;
+    color: #555;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #003d7a;
+}
+
+nav {
+    background-color: #0056b3;
+}
+
+#links{
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Bhojnalaya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <h1><a href="index.html" style="color: white; text-decoration: none;">Bhojnalaya</a></h1>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Your Cart</a>
+                <a href="register.html">Register</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
+        <section style="max-width: 400px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 5px;">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" method="POST" style="display: flex; flex-direction: column; gap: 10px;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" style="padding: 10px; background-color: #0056b3; color: white; border: none; cursor: pointer;">Login</button>
+            </form>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="register.html">Need an account? Register here.</a>
+                <br>
+                <a href="reset-password.html">Forgot password?</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+        <p>Contact us: +1234567890 | info@bhojnalaya.com</p>
+        <p>Owner: geekX</p>
+        <div>
+            <a href="index.html">Home</a> |
+            <a href="menu.html">Menu</a> |
+            <a href="register.html">Register</a>
+        </div>
+        <p>&copy; 2024 Bhojnalaya. All rights reserved.</p>
+    </footer>
+
+    <!-- java for login -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
+
+            if(email === storedEmail && btoa(password) === storedPassword) {
+                alert('Login successful!');
+                window.location.href = 'index.html'; // Redirect to home page or user profile
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

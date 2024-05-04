@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Bhojnalaya</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <h1><a href="index.html" style="color: white; text-decoration: none;">Bhojnalaya</a></h1>
+            <div>
+                <a id="links" href="index.html" style="margin-right: 50px;">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
+        <section class="menu-section">
+            <!-- today's special section -->
+            <h2>Today's Special</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="special1.jpg" alt="Special Dish 1">
+                    <p class="item-name">Chicken Pasta</p>
+                    <p class="price">₹150.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Chicken Pasta" data-price="150.00" data-image="special1.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="special2.jpg" alt="Special Dish 1">
+                    <p class="item-name">Sushi</p>
+                    <p class="price">₹60.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Sushi" data-price="60.00" data-image="special2.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="special3.jpg" alt="Special Dish 1">
+                    <p class="item-name">Ramen</p>
+                    <p class="price">₹90.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Ramen" data-price="90.00" data-image="special3.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="special4.jpg" alt="Special Dish 1">
+                    <p class="item-name">Fish</p>
+                    <p class="price">₹120.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Fish" data-price="120.00" data-image="special4.jpg">Buy</button>
+                </div>
+                <!-- more cards can be added -->
+            </div>
+        </section>
+        <section class="menu-section">
+
+            <!-- breakfast section -->
+            <h2>Breakfast</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="breakfast1.jpg" alt="Special Dish 1">
+                    <p class="item-name">Aloo Paratha</p>
+                    <p class="price">₹60.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Aloo Paratha" data-price="60.00" data-image="breakfast1.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="breakfast2.jpg" alt="Special Dish 1">
+                    <p class="item-name">Tea Samosa</p>
+                    <p class="price">₹45.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Tea Samosa" data-price="45.00" data-image="breakfast2.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="breakfast3.jpg" alt="Special Dish 1">
+                    <p class="item-name">Sev Puri</p>
+                    <p class="price">₹30.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Sev Puri" data-price="30.00" data-image="breakfast3.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="breakfast4.jpg" alt="Special Dish 1">
+                    <p class="item-name">Masala Dosa</p>
+                    <p class="price">₹60.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Masala Dosa" data-price="60.00" data-image="breakfast4.jpg">Buy</button>
+                </div>
+                <!-- more cards can be added -->
+            </div>
+        </section>
+        <section class="menu-section">
+            <!-- lunch section -->
+            <h2>Lunch</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="lunch1.jpg" alt="Special Dish 1">
+                    <p class="item-name">Butter Chicken With Naan(2)</p>
+                    <p class="price">₹150.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Butter chicken with naan(2)" data-price="150.00" data-image="lunch1.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="lunch2.jpg" alt="Special Dish 1">
+                    <p class="item-name">Mini Thali</p>
+                    <p class="price">₹120.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Mini Thali" data-price="120.00" data-image="lunch2.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="lunch3.jpg" alt="Special Dish 1">
+                    <p class="item-name">Chicken Thali</p>
+                    <p class="price">₹180.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Chicken Thali" data-price="180.00" data-image="lunch3.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="lunch4.jpg" alt="Special Dish 1">
+                    <p class="item-name">Omlette Rice</p>
+                    <p class="price">₹90.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Omlette Rice" data-price="90.00" data-image="lunch4.jpg">Buy</button>
+                </div>
+                <!-- more cards can be added -->
+            </div>
+        </section>
+        <section class="menu-section">
+            <!-- drinks section -->
+            <h2>Drinks</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="drinks1.jpg" alt="Special Dish 1">
+                    <p class="item-name">Lemon Mojito</p>
+                    <p class="price">₹40.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Lemom M0jito" data-price="40.00" data-image="drinks1.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="drinks2.jpg" alt="Special Dish 1">
+                    <p class="item-name">Fresh Buttermilk</p>
+                    <p class="price">₹40.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Fresh Buttermilk" data-price="40.00" data-image="drinks2.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="drinks3.jpg" alt="Special Dish 1">
+                    <p class="item-name">Cold Coffee</p>
+                    <p class="price">₹50.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Cold Coffee" data-price="50.00" data-image="drinks3.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="drinks4.jpg" alt="Special Dish 1">
+                    <p class="item-name">Masala Tea</p>
+                    <p class="price">₹15.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Masala Tea" data-price="15.00" data-image="drinks4.jpg">Buy
+                    </button>
+                </div>
+                <!-- more cards can be added -->
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <!-- deserts section -->
+            <h2>Deserts</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="desert1.jpg" alt="Special Dish 1">
+                    <p class="item-name">Ice-creame</p>
+                    <p class="price">₹30.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Ice-creame" data-price="30.00" data-image="desert1.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="desert2.jpg" alt="Special Dish 1">
+                    <p class="item-name">Jalebi-rabdi</p>
+                    <p class="price">₹40.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Jalebi-rabdi" data-price="40.00" data-image="desert2.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="desert3.jpg" alt="Special Dish 1">
+                    <p class="item-name">Karenji Sweets</p>
+                    <p class="price">₹20.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Karenji Sweets" data-price="20.00" data-image="desert3.jpg">Buy</button>
+                </div>
+                <div class="card">
+                    <img src="desert4.jpg" alt="Special Dish 1">
+                    <p class="item-name">Chocolate Brownie</p>
+                    <p class="price">₹25.00</p>
+                    <!-- data attribute to specify item details -->
+                    <button class="buy-btn" data-item="Chocolate Brownie" data-price="25.00" data-image="desert4.jpg">Buy
+                    </button>
+                </div>
+                <!-- more cards can be added -->
+            </div>
+        </section>
+    </main>
+    
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+        <p>Contact us: +1234567890 | info@bhojnalaya.com</p>
+        <p>Owner: John Doe</p>
+        <div>
+            <a href="index.html" style="color: white;">Home</a> |
+            <a href="login.html" style="color: white;">Login</a>
+        </div>
+        <p>&copy; 2024 Bhojnalaya. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle buy button clicks -->
+    <script>
+        // Get all buy buttons
+        const buyButtons = document.querySelectorAll('.buy-btn');
+    
+        // Add event listener to each buy button
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get item details from data attributes
+                const itemName = this.getAttribute('data-item');
+                const itemPrice = parseFloat(this.getAttribute('data-price'));
+                const itemImage = this.getAttribute('data-image'); // Ensure this attribute is added in the HTML
+    
+                // Redirect to payment page with item details as query parameters
+                window.location.href = `payment.html?item=${encodeURIComponent(itemName)}&price=${itemPrice}&image=${encodeURIComponent(itemImage)}`;
+            });
+        });
+    </script>
+    
+</body>
+</html>

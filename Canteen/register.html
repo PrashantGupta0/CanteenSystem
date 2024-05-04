@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Bhojnalaya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <h1><a href="index.html" style="color: white; text-decoration: none;">Bhojnalaya</a></h1>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="order.html">Your Cart</a>
+                <a href="login.html">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 20px;">
+        <section style="max-width: 400px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 5px;">
+            <h2>Register for an Account</h2>
+            <form id="registrationForm" style="display: flex; flex-direction: column; gap: 10px;">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" style="padding: 10px; background-color: #0056b3; color: white; border: none; cursor: pointer;">Register</button>
+            </form>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="login.html">Already have an account? Login here.</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+        <p>Contact us: +1234567890 | info@bhojnalaya.com</p>
+        <p>Owner: geekX</p>
+        <div>
+            <a href="index.html">Home</a> |
+            <a href="menu.html">Menu</a> |
+            <a href="login.html">Login</a>
+        </div>
+        <p>&copy; 2024 Bhojnalaya. All rights reserved.</p>
+    </footer>
+
+    <!-- java for registration -->
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Check if user already exists
+            if (localStorage.getItem('userEmail') === email) {
+                alert('An account with this email already exists. Please use a different email or login.');
+                return;
+            }
+
+            // Store the new user data
+            localStorage.setItem('userFullname', fullname);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', btoa(password)); // Encoding password for basic security
+
+            alert('Registration successful! You can now log in.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

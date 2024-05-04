@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Bhojnalaya</title>
+    <link rel="stylesheet" href="confirmation.css">
+</head>
+<body>
+    <!-- header section -->
+    <header>
+        <nav>
+            <h1><a href="index.html">Bhojnalaya</a></h1>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign-Up</a>
+            </div>
+        </nav>
+    </header>
+    <!-- bill generation section -->
+    <main>
+        <section>
+            <h2>Order Confirmed</h2>
+            <p>Thank you for your purchase! Your order details are below:</p>
+            <div class="order-details">
+                <div class="media">
+                    <img src="" alt="Ordered Item" id="item-image">
+                    <div id="qrcode"></div>
+                </div>
+                <p>Item: <span id="itemName"></span></p>
+                <p>Quantity: <span id="itemQuantity"></span></p>
+                <p>Total Price: ₹<span id="itemTotalPrice"></span></p>
+            </div>
+            
+        </section>
+    </main>
+    <!-- footer section -->
+    <footer style="background-color: #333;">
+        <p>Contact us: +1234567890 | info@bhojnalaya.com</p>
+        <p>Owner: geekX</p>
+        <div>
+            <a href="index.html" style="text-decoration: none; color: white;">Home</a> |
+            <a href="menu.html" style="text-decoration: none; color: white;">Menu</a>
+        </div>
+        <p>&copy; 2024 Bhojnalaya. All rights reserved.</p>
+    </footer>
+     
+    <!-- javascript to handle page functionality -->
+    <script>
+        window.onload = function() {
+            // Extract and decode query parameters from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemName = decodeURIComponent(urlParams.get('item'));
+            const itemImage = decodeURIComponent(urlParams.get('image'));
+            const itemQuantity = decodeURIComponent(urlParams.get('quantity'));
+            const itemTotalPrice = decodeURIComponent(urlParams.get('total'));
+            const timestamp = new Date().getTime()+330*60000;
+    
+            // Display the order details on the webpage
+            document.getElementById('itemName').textContent = itemName;
+            document.getElementById('itemQuantity').textContent = itemQuantity;
+            document.getElementById('itemTotalPrice').textContent = itemTotalPrice;
+            document.getElementById('item-image').src = itemImage;
+            document.getElementById('item-image').alt = itemName;
+    
+            // Function to generate a QR code using an external API
+            function generateQRCode() {
+                const details = `${itemName}, ${itemQuantity}, ₹${itemTotalPrice}, ${timestamp}`;
+                const encodedURL = encodeURIComponent(details);
+                const qrCodeImage = new Image();
+                qrCodeImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodedURL}`;
+                const qrCodeContainer = document.getElementById("qrcode");
+                qrCodeContainer.innerHTML = ""; // Clear any existing QR codes
+                qrCodeContainer.appendChild(qrCodeImage);
+            }
+    
+            // Call the function to create the QR code after setting up the page
+            generateQRCode();
+        };
+    </script>
+    
+    
+</body>
+</html>
